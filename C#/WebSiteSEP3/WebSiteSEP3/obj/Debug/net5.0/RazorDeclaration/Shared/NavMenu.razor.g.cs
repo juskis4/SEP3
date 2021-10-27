@@ -90,7 +90,7 @@ using WebSiteSEP3.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\Shared\NavMenu.razor"
+#line 18 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

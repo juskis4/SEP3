@@ -82,6 +82,13 @@ using WebSiteSEP3.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\Pages\Index.razor"
+using LoginComponet;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {

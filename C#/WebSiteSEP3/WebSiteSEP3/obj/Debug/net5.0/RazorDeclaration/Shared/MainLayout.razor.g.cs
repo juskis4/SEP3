@@ -89,6 +89,18 @@ using WebSiteSEP3.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 19 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\Shared\MainLayout.razor"
+ 
+    protected async override Task OnInitializedAsync()
+    {
+        base.OnInitialized();
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591
