@@ -1,3 +1,5 @@
+package com.example.consumingrest;
+
 public class Value {
     private Long id;
     private String userResources;
