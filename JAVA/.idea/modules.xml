@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JAVA.iml" filepath="$PROJECT_DIR$/JAVA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ws_rest/consuming-rest/consuming-rest.iml" filepath="$PROJECT_DIR$/ws_rest/consuming-rest/consuming-rest.iml" />
     </modules>
   </component>
 </project>
