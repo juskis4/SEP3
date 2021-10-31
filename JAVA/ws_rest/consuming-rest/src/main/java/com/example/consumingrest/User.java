@@ -1,3 +1,4 @@
+package com.example.consumingrest;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -5,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class User {
     private String type;
-    private JsonIgnoreProperties.Value value;
+    private Value value;
 
     public User(){
     }
@@ -18,18 +19,18 @@ public class User {
         this.type = type;
     }
 
-    public JsonIgnoreProperties.Value getValue(){
+    public Value getValue(){
         return value;
     }
 
-    public void setValue(JsonIgnoreProperties.Value value){
+    public void setValue(Value value){
         this.value = value;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "type='" + type + '\'' + "Value= " + value + '\'' +
+        return "com.example.consumingrest.User{" +
+                "type='" + type + '\'' + "com.example.consumingrest.Value= " + value + '\'' +
                 '}';
     }
 }
