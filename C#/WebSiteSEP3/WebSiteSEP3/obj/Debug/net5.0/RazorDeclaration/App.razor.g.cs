@@ -69,15 +69,15 @@ using Microsoft.JSInterop;
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\_Imports.razor"
-using WebSiteSEP3;
+#line 1 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\App.razor"
+using WebSiteSEP3.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\_Imports.razor"
-using WebSiteSEP3.Shared;
+#line 2 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\WebSiteSEP3\App.razor"
+using Client;
 
 #line default
 #line hidden
