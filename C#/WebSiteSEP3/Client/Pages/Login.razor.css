@@ -55,8 +55,8 @@
     cursor: pointer;
     display: block;
     margin: auto;
-    background: transparent;
     outline: none;
     border: 0;
     border-radius: 30px;
+    background-color: #f45c43;
 }
