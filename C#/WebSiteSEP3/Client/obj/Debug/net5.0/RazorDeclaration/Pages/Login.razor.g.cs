@@ -69,7 +69,14 @@ using Microsoft.JSInterop;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\Pages\Login.razor"
+#line 9 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\_Imports.razor"
+using Client;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\Pages\Login.razor"
 using Client.Authentication;
 
 #line default
@@ -84,7 +91,7 @@ using Client.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\Pages\Login.razor"
+#line 24 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\Pages\Login.razor"
        
     private string username;
     private string password;
@@ -96,7 +103,7 @@ using Client.Authentication;
 
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
             NavigationManager.NavigateTo("/");
@@ -106,6 +113,8 @@ using Client.Authentication;
             errorMessage = e.Message;
         }
     }
+
+    //TODO to make register works 
 
 #line default
 #line hidden

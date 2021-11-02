@@ -68,6 +68,13 @@ using Microsoft.JSInterop;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\_Imports.razor"
+using Client;
+
+#line default
+#line hidden
+#nullable disable
     public partial class SurveyPrompt : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
