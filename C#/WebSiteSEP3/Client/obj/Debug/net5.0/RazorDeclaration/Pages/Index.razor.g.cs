@@ -69,6 +69,13 @@ using Microsoft.JSInterop;
 #line hidden
 #nullable disable
 #nullable restore
+#line 9 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\_Imports.razor"
+using Client;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "D:\FACULTATE SEMESTRUL 3\SEP3\CODE\SEP3\C#\WebSiteSEP3\Client\Pages\Index.razor"
 using LoginComponent;
 

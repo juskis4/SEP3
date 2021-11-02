@@ -28,4 +28,8 @@
       <_ContentIncludedByDefault Remove="Shared\SurveyPrompt.razor" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="background.jpg" />
+    </ItemGroup>
+
 </Project>
