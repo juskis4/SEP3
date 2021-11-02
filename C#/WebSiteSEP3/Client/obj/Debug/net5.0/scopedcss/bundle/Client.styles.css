@@ -21,8 +21,7 @@
     padding: 5px;
     overflow: hidden;
     background: white;
-    border-radius: 20px; 
-    align-items: center;
+    border-radius: 20px;
 }
 .hero[b-qqczw58t74] {
     height: 100%;
@@ -57,10 +56,10 @@
     cursor: pointer;
     display: block;
     margin: auto;
-    background: transparent;
     outline: none;
     border: 0;
     border-radius: 30px;
+    background-color: #f45c43;
 }
 /* _content/Client/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ocnk4r8tjs] {
