@@ -1,7 +1,5 @@
-package Handlers;
+package Sockets.Handlers;
 
-
-import org.apache.catalina.Host;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -19,18 +19,4 @@ public class ConsumingRestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ConsumingRestApplication.class, args);
 	}
-
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
-
-	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-		return args -> {
-			User user = restTemplate.getForObject(
-					"INSERT HOST LINK", User.class); //TODO insert host link from API
-			log.info(user.toString());
-		};
-	}
 }
