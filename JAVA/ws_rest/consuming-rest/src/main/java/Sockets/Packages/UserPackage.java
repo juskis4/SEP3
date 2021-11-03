@@ -1,6 +1,6 @@
-package Packages;
+package Sockets.Packages;
 
-import Models.User;
+import Sockets.Models.User;
 
 public class UserPackage extends SendingType{
     private User user;

@@ -2,14 +2,17 @@ package Sockets.Handling;
 
 import Sockets.Models.User;
 import Sockets.Packages.SendingType;
+import Sockets.Packages.UserPackage;
 import com.google.gson.Gson;
 import mediator.DatabaseServerManager;
 
+import javax.sound.sampled.AudioFormat;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class ServerHandling implements Runnable{
     private Socket socket;
@@ -40,14 +43,20 @@ public class ServerHandling implements Runnable{
             switch (sendingType.getType())
             {
                 case "validateUser" :
-                    User user = sendingType;
-                    DatabaseServerManager.getInstance().getUserDB()
+//                    SendingType userPackage = gson.fromJson();
+//                    DatabaseServerManager.getInstance().getUserDB()
             }
+        }
+
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
     }
 
-    public void sendToServer(String message)
+    public void sendDataToServer(String message)
     {
+        byte[] dataToClient = message.getBytes();
 
     }
 

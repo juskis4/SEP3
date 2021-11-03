@@ -1,4 +1,4 @@
-package Packages;
+package Sockets.Packages;
 
 public abstract class SendingType {
     private String type;
