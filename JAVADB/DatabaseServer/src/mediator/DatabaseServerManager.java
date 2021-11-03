@@ -1,13 +1,16 @@
 package mediator;
 
 import domain.User;
-import org.postgresql.core.SqlCommand;
+
+import javax.xml.crypto.Data;
 import java.sql.*;
 
 public class DatabaseServerManager implements DatabaseServer
 {
   private Connection connection;
 
+  private static DatabaseServerManager instance;
+  private static Object lock = new Object();
   public DatabaseServerManager()
   {
   }
@@ -34,5 +37,19 @@ public class DatabaseServerManager implements DatabaseServer
   {
 
     return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=sep3_project", "postgres","");
+  }
+
+  public static DatabaseServerManager getInstance() {
+    if(instance == null)
+    {
+      synchronized (lock)
+      {
+        if(instance == null)
+        {
+          instance = new DatabaseServerManager();
+        }
+      }
+    }
+    return instance;
   }
 }
