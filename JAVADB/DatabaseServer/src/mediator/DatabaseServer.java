@@ -1,6 +1,6 @@
 package mediator;
 
-import domain.User;
+import Sockets.Models.User;
 
 import java.sql.SQLException;
 
