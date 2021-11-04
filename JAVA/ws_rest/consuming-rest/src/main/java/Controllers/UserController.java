@@ -14,8 +14,8 @@ public class UserController {
 
     private UserService userService;
 
-    @GetMapping("/validate")
-    public ResponseEntity<User> ValidateLogin(@RequestBody String username, @RequestBody String password)
+    @GetMapping("/validateLogin")
+    public ResponseEntity<User> ValidateLogin(@RequestParam String username, @RequestParam String password)
     {
         try{
             User user = userService.ValidateLogin(username,password);
