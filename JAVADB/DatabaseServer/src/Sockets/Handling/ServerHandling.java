@@ -23,15 +23,15 @@ public class ServerHandling implements Runnable{
     private boolean running;
     private Gson gson;
 
-    public ServerHandling(Socket socket, DatabaseServer databaseServer) throws IOException, SQLException {
-        connect(socket, databaseServer);
+    public ServerHandling(DatabaseServer databaseServer) throws IOException, SQLException {
+        connect(databaseServer);
     }
 
-    private void connect(Socket socket, DatabaseServer databaseServer) throws IOException
+    private void connect(DatabaseServer databaseServer) throws IOException
     {
         serverSocket = new ServerSocket(2910);
         System.out.println("Server started...");
-        this.socket = socket;
+        this.socket = serverSocket.accept();
         gson = new Gson();
         this.databaseServer = databaseServer;
     }
@@ -49,14 +49,14 @@ public class ServerHandling implements Runnable{
 
             switch (received.getType())
             {
-                case "validateUser" :
+                case "validateLogin" :
                     //Receive user from client
                     UserPackage userPackage = gson.fromJson(message, UserPackage.class);
                     User user = userPackage.getUser();
 
                     //Getting user from database with credentials given from Client
                     User userToBeSent = databaseServer.getUserDB(user.getUsername(), user.getPassword());
-                    UserPackage toSentPackage = new UserPackage("validateUser", userToBeSent);
+                    UserPackage toSentPackage = new UserPackage("validateLogin", userToBeSent);
 
                     //Sending back the user such that it can be validated
                     String replyToClient = gson.toJson(toSentPackage);
