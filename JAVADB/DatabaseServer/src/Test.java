@@ -1,4 +1,3 @@
-import domain.User;
 import mediator.DatabaseServerManager;
 
 import java.sql.SQLException;

@@ -1,7 +1,7 @@
 package Sockets.Models;
 
 public class User {
-    public String Id;
+    public int Id;
     public String Username;
     public String Password;
     public String Photo;
@@ -10,7 +10,7 @@ public class User {
     public String SecurityLevel;
     public String Role;
 
-    public User(String id, String username, String password, String photo, String lastName, String firstName, String securityLevel, String role) {
+    public User(int id, String username, String password, String photo, String lastName, String firstName, String securityLevel, String role) {
         Id = id;
         Username = username;
         Password = password;
@@ -23,14 +23,14 @@ public class User {
 
     public User(String username, String password)
     {
-        this(null,username,password,null,null,null,null,null);
+        this(-1,username,password,null,null,null,null,null);
     }
 
-    public String getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         Id = id;
     }
 
