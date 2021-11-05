@@ -6,7 +6,7 @@ import Sockets.Models.User;
 public class UserPackage extends SendingType{
     private User user;
 
-    UserPackage(String type, User user)
+    public UserPackage(String type, User user)
     {
         super(type);
         this.user = user;

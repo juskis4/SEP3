@@ -1,41 +1,34 @@
 package Services;
 
+import Sockets.Handlers.ClientHandling;
 import Sockets.Models.User;
+import Sockets.Packages.UserPackage;
+import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class UserService implements IUserService{
 
-    private ArrayList<User> users;
+    private ClientHandling clientHandling;
+    private Gson gson;
 
-
-    public UserService()
-    {
-        users = new ArrayList<>();
+    public UserService() throws IOException {
+       clientHandling = new ClientHandling();
+       gson = new Gson();
     }
 
     @Override
-    public User ValidateLogin(String username, String password) {
-        User user = new User(username,password);
-        for (User findUser:
-             users) {
-            try {
-                if(user.equals(findUser))
-                {
-                    return user;
-                }
-            }
-            catch (Exception e){
-                e.getMessage();
-            }
-        }
-        return null;
-    }
+    public User ValidateLogin(String username, String password) throws IOException {
+        //Sends user requested for validation from Client Blazor
+        UserPackage userPackage = new UserPackage("validateLogin", new User(username,password));
+        String dataToBeSent = gson.toJson(userPackage);
+        clientHandling.sendToServer(dataToBeSent);
 
-    public void seed()
-    {
-        User user = new User("Ionut","12345");
-        users.add(user);
+        //Received back the confirmation and post it, such that it can be verified
+        String dataReceivedFromServer = clientHandling.receiveFromServer();
+        userPackage = gson.fromJson(dataReceivedFromServer, UserPackage.class);
+        return userPackage.getUser();
     }
     
 }
