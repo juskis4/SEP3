@@ -7,19 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
-@RequestMapping("/SEP3Group3")
 public class UserController {
 
 
     private UserService userService;
+
+    public UserController() throws IOException {
+        userService = new UserService();
+    }
 
     @GetMapping("/validateLogin")
     public ResponseEntity<User> ValidateLogin(@RequestParam String username, @RequestParam String password)
     {
         try{
             User user = userService.ValidateLogin(username,password);
-
             if(user == null) {
                 return ResponseEntity.notFound().build();
             }

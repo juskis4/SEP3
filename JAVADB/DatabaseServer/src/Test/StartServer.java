@@ -1,3 +1,5 @@
+package Test;
+
 import Sockets.Handling.ServerHandling;
 import mediator.DatabaseServer;
 import mediator.DatabaseServerManager;

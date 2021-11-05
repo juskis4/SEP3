@@ -10,21 +10,25 @@ namespace Client.Data.Impl
     public class UserService : IUserService
     {
         private readonly HttpClient Client = new HttpClient();
-        private readonly string Uri = "https://localhost:5001/";
+        private readonly string Uri = "http://localhost:8080";
         public async Task<User> ValidateLogin(string username, string password)
         {
             HttpResponseMessage responseMessage =
-                await Client.GetAsync($"{Uri}/SEP3Group3/validate?username={username}&password={password}");
+                await Client.GetAsync($"{Uri}/validateLogin?username={username}&password={password}");
             String reply = await responseMessage.Content.ReadAsStringAsync();
 
-            if (responseMessage.StatusCode == HttpStatusCode.OK)
+            if (responseMessage.StatusCode == HttpStatusCode.NotFound)
             {
-                string userAsJson = await responseMessage.Content.ReadAsStringAsync();
-                User resultUser = JsonSerializer.Deserialize<User>(userAsJson);
-                return resultUser;
+                throw new Exception("User not found");
             }
 
-            throw new Exception("User not found/Password incorrect");
+            if (responseMessage.StatusCode == HttpStatusCode.BadRequest)
+            {
+                throw new Exception("Problems with connection with database");
+            } 
+            string userAsJson = await responseMessage.Content.ReadAsStringAsync();
+            User resultUser = JsonSerializer.Deserialize<User>(userAsJson); 
+            return resultUser;
         }
     }
 }

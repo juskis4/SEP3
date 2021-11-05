@@ -4,11 +4,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/JAVA/ws_rest/consuming-rest/pom.xml" />
-        <option value="$PROJECT_DIR$/JAVADB/DatabaseServer/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="14" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="corretto-15" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
