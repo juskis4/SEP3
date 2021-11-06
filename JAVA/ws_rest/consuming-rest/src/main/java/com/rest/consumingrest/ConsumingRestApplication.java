@@ -1,5 +1,6 @@
 package com.rest.consumingrest;
 
+import Services.IUserService;
 import Services.UserService;
 import Sockets.Models.User;
 import org.slf4j.Logger;
@@ -19,8 +20,8 @@ public class ConsumingRestApplication {
 		SpringApplication.run(ConsumingRestApplication.class, args);
 
 		//Test Socket connection
-		UserService userService = new UserService();
-		User user = userService.ValidateLogin("Ionut","12345");
+		IUserService userService = new UserService();
+		User user = userService.ValidateLogin("admin","admin");
 		System.out.println("Username got: " + user.getUsername() + ", " +
 				"password got: " + user.getPassword());
 	}

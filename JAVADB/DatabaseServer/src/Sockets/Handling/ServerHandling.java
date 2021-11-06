@@ -1,7 +1,6 @@
 package Sockets.Handling;
 
 import Sockets.Models.User;
-import Sockets.Packages.SendingType;
 import Sockets.Packages.UserPackage;
 import com.google.gson.Gson;
 import mediator.DatabaseServer;
@@ -39,12 +38,6 @@ public class ServerHandling implements Runnable{
                 int read = inputStream.read(lenbytes,0, lenbytes.length);
                 String message = new String(lenbytes, 0, read);
                 System.out.println("Tier 2: " + message);
-
-                UserPackage received = gson.fromJson(message, UserPackage.class);
-
-                switch (received.getType())
-                {
-                    case "validateLogin" :
                         //Receive user from client
                         UserPackage userPackage = gson.fromJson(message, UserPackage.class);
                         User user = userPackage.getUser();
@@ -56,24 +49,20 @@ public class ServerHandling implements Runnable{
                         //Sending back the user such that it can be validated
                         String replyToClient = gson.toJson(toSentPackage);
                         sendDataToServer(replyToClient);
-                        break;
-                    default:
-                        System.out.println("Type not found");
                 }
-            }
-
             catch (Exception e)
             {
                 e.printStackTrace();
             }
+            }
+
+
         }
-    }
 
     public void sendDataToServer(String message) throws IOException {
         OutputStream outputStream = socket.getOutputStream();
         byte[] messageAsBytes = message.getBytes();
         outputStream.write(messageAsBytes, 0, messageAsBytes.length);
     }
+    }
 
-
-}
