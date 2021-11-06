@@ -14,8 +14,9 @@ public class StartServer
   public static void main(String[] args) throws SQLException, IOException
   {
     DatabaseServer databaseServer = new DatabaseServerManager();
-    ServerHandling serverHandling = new ServerHandling(databaseServer);
-    Thread thread = new Thread(serverHandling);
-    thread.start();
+//    ServerHandling serverHandling = new ServerHandling(databaseServer);
+//    Thread thread = new Thread(serverHandling);
+//    thread.start();
+    System.out.println(databaseServer.getUserDB("admin", "admin").Id);
   }
 }
