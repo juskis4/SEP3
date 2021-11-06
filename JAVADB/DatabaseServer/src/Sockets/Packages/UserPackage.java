@@ -3,12 +3,11 @@ package Sockets.Packages;
 
 import Sockets.Models.User;
 
-public class UserPackage extends SendingType{
+public class UserPackage{
     private User user;
 
     public UserPackage(String type, User user)
     {
-        super(type);
         this.user = user;
     }
 

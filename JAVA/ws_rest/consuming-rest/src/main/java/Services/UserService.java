@@ -6,16 +6,15 @@ import Sockets.Packages.UserPackage;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class UserService implements IUserService{
+public class UserService implements IUserService {
 
     private ClientHandling clientHandling;
     private Gson gson;
 
     public UserService() throws IOException {
-       clientHandling = new ClientHandling();
-       gson = new Gson();
+        clientHandling = new ClientHandling();
+        gson = new Gson();
     }
 
     @Override
@@ -30,5 +29,5 @@ public class UserService implements IUserService{
         userPackage = gson.fromJson(dataReceivedFromServer, UserPackage.class);
         return userPackage.getUser();
     }
-    
+
 }
