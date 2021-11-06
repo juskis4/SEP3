@@ -7,10 +7,8 @@ import java.sql.*;
 public class DatabaseServerManager implements DatabaseServer
 {
   private Connection connection;
-
-  private static DatabaseServerManager instance;
   public DatabaseServerManager() throws SQLException {
-    connection = getConnection();
+    DriverManager.registerDriver(new org.postgresql.Driver());
   }
 
   @Override public User getUserDB (String username, String password) throws SQLException
@@ -18,7 +16,7 @@ public class DatabaseServerManager implements DatabaseServer
     User user = null;
      try(Connection connection = getConnection())
      {
-       PreparedStatement statement = connection.prepareStatement("SELECT * FROM users ;");
+       PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?;");
        statement.setString(1, username);
        statement.setString(2, password);
 
@@ -28,8 +26,8 @@ public class DatabaseServerManager implements DatabaseServer
        {
          user = new User(Integer.parseInt(resultSet.getString("id")), resultSet.getString("username"),
                  resultSet.getString("password"), resultSet.getString("photo"),
-                 resultSet.getString("firstname"), resultSet.getString("last_name"),
-                 resultSet.getString("securityevel"), resultSet.getString("role"));
+                 resultSet.getString("firstname"), resultSet.getString("lastname"),
+                 resultSet.getString("securityLevel"), resultSet.getString("role"));
        }
      }
      return user;
@@ -38,6 +36,6 @@ public class DatabaseServerManager implements DatabaseServer
   private Connection getConnection() throws SQLException
   {
 
-    return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=sep3_database", "postgres","");
+    return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=sep3_database", "postgres","1234");
   }
 }
