@@ -6,9 +6,14 @@ import java.sql.*;
 
 public class DatabaseServerManager implements DatabaseServer
 {
-  private Connection connection;
   public DatabaseServerManager() throws SQLException {
     DriverManager.registerDriver(new org.postgresql.Driver());
+    try {
+      Class.forName("org.postgresql.Driver");
+    }
+    catch (java.lang.ClassNotFoundException e) {
+      System.out.println(e.getMessage());
+    }
   }
 
   @Override public User getUserDB (String username, String password) throws SQLException
@@ -16,6 +21,7 @@ public class DatabaseServerManager implements DatabaseServer
     User user = null;
      try(Connection connection = getConnection())
      {
+
        PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?;");
        statement.setString(1, username);
        statement.setString(2, password);
@@ -26,8 +32,8 @@ public class DatabaseServerManager implements DatabaseServer
        {
          user = new User(Integer.parseInt(resultSet.getString("id")), resultSet.getString("username"),
                  resultSet.getString("password"), resultSet.getString("photo"),
-                 resultSet.getString("firstname"), resultSet.getString("lastname"),
-                 resultSet.getString("securityLevel"), resultSet.getString("role"));
+                 resultSet.getString("first_name"), resultSet.getString("last_name"),
+                 resultSet.getString("security_level"), resultSet.getString("role"));
        }
      }
      return user;
@@ -35,7 +41,9 @@ public class DatabaseServerManager implements DatabaseServer
 
   private Connection getConnection() throws SQLException
   {
-
-    return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=sep3_database", "postgres","1234");
+    String url = "jdbc:postgresql://ella.db.elephantsql.com:5432/zgckhgwi";
+    String username = "zgckhgwi";
+    String password = "S_S0QYXJm9u10Vi53oEXaHAJo0W5Q7vB";
+    return DriverManager.getConnection(url, username, password);
   }
 }
