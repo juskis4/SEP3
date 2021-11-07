@@ -1,14 +1,28 @@
 package Sockets.Models;
 
-public class User {
+import com.google.gson.annotations.Expose;
+
+import java.io.Serializable;
+
+public class User{
+    @Expose(serialize = true, deserialize = false)
     public int Id;
+    @Expose(serialize = true, deserialize = false)
     public String Username;
+    @Expose(serialize = true, deserialize = true)
     public String Password;
+    @Expose(serialize = true, deserialize = true)
     public String Photo;
+    @Expose(serialize = true, deserialize = true)
     public String LastName;
+    @Expose(serialize = true, deserialize = true)
     public String FirstName;
+    @Expose(serialize = true, deserialize = true)
     public String SecurityLevel;
+    @Expose(serialize = true, deserialize = true)
     public String Role;
+
+
 
     public User(int id, String username, String password, String photo, String lastName, String firstName, String securityLevel, String role) {
         Id = id;

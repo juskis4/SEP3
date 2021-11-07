@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JAVADB/DatabaseServer/DatabaseServer.iml" filepath="$PROJECT_DIR$/JAVADB/DatabaseServer/DatabaseServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JAVA/ws_rest/consuming-rest/REST-Server.iml" filepath="$PROJECT_DIR$/JAVA/ws_rest/consuming-rest/REST-Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/SEP3.iml" filepath="$PROJECT_DIR$/SEP3.iml" />
       <module fileurl="file://$PROJECT_DIR$/JAVA/ws_rest/consuming-rest/consuming-rest.iml" filepath="$PROJECT_DIR$/JAVA/ws_rest/consuming-rest/consuming-rest.iml" />
     </modules>

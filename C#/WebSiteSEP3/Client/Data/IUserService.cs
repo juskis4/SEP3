@@ -5,6 +5,7 @@ namespace Client.Data
 {
     public interface IUserService
     {
-        Task<User> ValidateLogin(string username, string password);
+        Task<User> ValidateLoginAsync(string username, string password);
+        Task<User> RegisterUserAsync(string Username,string Password, string Photo, string FirstName, string LastName);//ID AND SECURITY LEVEL SHOULD BE GENERATED AUTOMATICALLY IN SERVER SIDE
     }
 }
