@@ -25,6 +25,5 @@ public class StartServer
     //UserPackage userPackage1 = new UserPackage(user1);
     serverHandling.sendDataToServer(userPackage);
     System.out.println("sent");
-
   }
 }

@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\baico\\.nuget\\packages\\": {}
+    "C:\\Users\\Ionut\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\baico\\RiderProjects\\SEP3\\C#\\WebSiteSEP3\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\FACULTATE SEMESTRUL 3\\SEP3\\CODE\\SEP3\\C#\\WebSiteSEP3\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\baico\\RiderProjects\\SEP3\\C#\\WebSiteSEP3\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\baico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\baico\\RiderProjects\\SEP3\\C#\\WebSiteSEP3\\Client\\obj\\",
+      "projectPath": "D:\\FACULTATE SEMESTRUL 3\\SEP3\\CODE\\SEP3\\C#\\WebSiteSEP3\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\Ionut\\.nuget\\packages\\",
+      "outputPath": "D:\\FACULTATE SEMESTRUL 3\\SEP3\\CODE\\SEP3\\C#\\WebSiteSEP3\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\baico\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Ionut\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\baico\\.dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Ionut\\.dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

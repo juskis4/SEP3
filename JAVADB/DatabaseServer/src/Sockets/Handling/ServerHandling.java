@@ -1,7 +1,6 @@
 package Sockets.Handling;
 
 import Sockets.Models.User;
-import Sockets.Packages.SendingType;
 import Sockets.Packages.UserPackage;
 import com.google.gson.Gson;
 import mediator.DatabaseServer;
@@ -57,13 +56,14 @@ public class ServerHandling implements Runnable{
                 }
 
             }
-
             catch (Exception e)
             {
                 e.printStackTrace();
             }
+            }
+
+
         }
-    }
 
     public void sendDataToServer(UserPackage obj) throws IOException {
         OutputStream outputStream = socket.getOutputStream();
@@ -71,6 +71,5 @@ public class ServerHandling implements Runnable{
         objectOutputStream.writeObject(obj);
         System.out.println("Sent object");
     }
+    }
 
-
-}
