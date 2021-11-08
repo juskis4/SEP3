@@ -1,6 +1,9 @@
 package Sockets.Models;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable
+{
     public int Id;
     public String Username;
     public String Password;

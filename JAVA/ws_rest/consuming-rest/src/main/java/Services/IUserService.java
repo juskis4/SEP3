@@ -6,5 +6,6 @@ import java.io.IOException;
 
 public interface IUserService {
 
-    User ValidateLogin(String username, String password) throws IOException;
+    User ValidateLogin(String username, String password)
+        throws IOException, ClassNotFoundException;
 }
