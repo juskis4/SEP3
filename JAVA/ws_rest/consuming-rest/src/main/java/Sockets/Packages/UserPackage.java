@@ -3,13 +3,17 @@ package Sockets.Packages;
 
 import Sockets.Models.User;
 
-public class UserPackage extends SendingType{
-    private User user;
+import java.io.Serializable;
 
-    public UserPackage(String type, User user)
+public class UserPackage implements Serializable{
+    private User user;
+    private static final long serialVersionUID = 6529685098267757690L;
+    private String type;
+
+    public UserPackage(User user, String type)
     {
-        super(type);
         this.user = user;
+        this.type = type;
     }
 
 

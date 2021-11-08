@@ -1,9 +1,10 @@
 package Sockets.Handlers;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import Sockets.Models.User;
+import Sockets.Packages.UserPackage;
+
+import java.io.*;
 import java.net.Socket;
 
 public class ClientHandling {
@@ -12,28 +13,40 @@ public class ClientHandling {
     private static int PORT = 2910;
     private Socket socket;
     private InputStream inputStream;
+    private ObjectInputStream objectInputStream;
+    private ObjectOutputStream objectOutputStream;
     private OutputStream outputStream;
 
     public ClientHandling() throws IOException {
         connect();
     }
 
-    public void sendToServer(String message) throws IOException {
-        byte[] messageAsBytes = message.getBytes();
-        outputStream.write(messageAsBytes, 0, messageAsBytes.length);
+    public void sendToServer(Object obj) throws IOException {
+        objectOutputStream.writeObject(obj);
     }
 
-    public String receiveFromServer() throws IOException {
-        byte[] lenbytes = new byte[1024];
-        int read = inputStream.read(lenbytes, 0, lenbytes.length);
-        String message = new String(lenbytes, 0, read);
-        return message;
+    public Object receiveFromServer() throws IOException, ClassNotFoundException
+    {
+        System.out.println("Received");
+        final Object obj = objectInputStream.readObject();
+        if(obj instanceof UserPackage)
+        {
+            final UserPackage user = (UserPackage) obj;
+            return user;
+        }
+        else{
+
+        }
+        return null;
     }
 
     public void connect() throws IOException {
         this.socket = new Socket(HOST, PORT);
         inputStream = socket.getInputStream();
+        objectInputStream = new ObjectInputStream(inputStream);
         outputStream = socket.getOutputStream();
+        objectOutputStream = new ObjectOutputStream(outputStream);
+        System.out.println("Connected");
     }
 
     public void disconnect() throws IOException {

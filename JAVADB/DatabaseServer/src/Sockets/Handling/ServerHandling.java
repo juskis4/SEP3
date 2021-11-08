@@ -34,22 +34,28 @@ public class ServerHandling implements Runnable{
         {
             try {
                 InputStream inputStream = socket.getInputStream();
-                byte[] lenbytes = new byte[1024];
-                int read = inputStream.read(lenbytes,0, lenbytes.length);
-                String message = new String(lenbytes, 0, read);
-                System.out.println("Tier 2: " + message);
-                        //Receive user from client
-                        UserPackage userPackage = gson.fromJson(message, UserPackage.class);
-                        User user = userPackage.getUser();
-
-                        //Getting user from database with credentials given from Client
-                        User userToBeSent = databaseServer.getUserDB(user.getUsername(), user.getPassword());
-                        UserPackage toSentPackage = new UserPackage("validateLogin", userToBeSent);
-
-                        //Sending back the user such that it can be validated
-                        String replyToClient = gson.toJson(toSentPackage);
-                        sendDataToServer(replyToClient);
+                ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+                Object obj = objectInputStream.readObject();
+                if(obj instanceof UserPackage)
+                {
+                    UserPackage received = (UserPackage)obj;
+                    switch (received.getType())
+                    {
+                        case "validateLogin" :
+                            //Receive user from client
+                            User user = received.getUser();
+                            //Getting user from database with credentials given from Client
+                            User userToBeSent = databaseServer.getUserDB(user.getUsername(), user.getPassword());
+                            UserPackage toSentPackage = new UserPackage( userToBeSent, "lol");
+                            //Sending back the user such that it can be validated
+                            sendDataToServer(toSentPackage);
+                            break;
+                        default:
+                            System.out.println("Type not found");
+                    }
                 }
+
+            }
             catch (Exception e)
             {
                 e.printStackTrace();
@@ -59,10 +65,11 @@ public class ServerHandling implements Runnable{
 
         }
 
-    public void sendDataToServer(String message) throws IOException {
+    public void sendDataToServer(UserPackage obj) throws IOException {
         OutputStream outputStream = socket.getOutputStream();
-        byte[] messageAsBytes = message.getBytes();
-        outputStream.write(messageAsBytes, 0, messageAsBytes.length);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+        objectOutputStream.writeObject(obj);
+        System.out.println("Sent object");
     }
     }
 

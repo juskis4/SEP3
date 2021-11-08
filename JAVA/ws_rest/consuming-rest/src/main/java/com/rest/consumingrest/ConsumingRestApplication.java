@@ -15,7 +15,9 @@ public class ConsumingRestApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(ConsumingRestApplication.class);
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)
+			throws IOException, ClassNotFoundException
+	{
 		//Test RESTful services
 		SpringApplication.run(ConsumingRestApplication.class, args);
 
