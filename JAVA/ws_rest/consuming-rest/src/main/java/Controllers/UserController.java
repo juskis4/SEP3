@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
+@CrossOrigin
+@RequestMapping(value = "/user")
 public class UserController {
 
 
@@ -18,7 +20,7 @@ public class UserController {
         userService = new UserService();
     }
 
-    @GetMapping("/validateLogin")
+    @GetMapping("/login")
     public ResponseEntity<User> ValidateLogin(@RequestParam String username, @RequestParam String password)
     {
         try{
