@@ -28,7 +28,7 @@ public class UserService implements IUserService {
 
         //Received back the confirmation and post it, such that it can be verified
         Object dataReceivedFromServer = clientHandling.receiveFromServer();
-        userPackage = gson.fromJson((JsonElement) dataReceivedFromServer, UserPackage.class);
+        userPackage = (UserPackage) dataReceivedFromServer;
         return userPackage.getUser();
     }
 
