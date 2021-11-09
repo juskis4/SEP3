@@ -14,7 +14,7 @@ namespace Client.Data.Impl
         public async Task<User> ValidateLogin(string username, string password)
         {
             HttpResponseMessage responseMessage =
-                await Client.GetAsync($"{Uri}/validateLogin?username={username}&password={password}");
+                await Client.GetAsync($"http://localhost:8080/user/login?username={username}&password={password}");
             String reply = await responseMessage.Content.ReadAsStringAsync();
 
             if (responseMessage.StatusCode == HttpStatusCode.NotFound)
