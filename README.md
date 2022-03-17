@@ -8,6 +8,10 @@ The project features full Blazor architecture, C#, and Java.
 The results are that the system is complete with all requirements
 implemented. However, there are some bugs, but the main system is working as intended. 
 
+## Methodology
+* Scrum
+* Unified Software Development process
+
 ## Analysis
 The main problem consists of the current danger of shopping in a physical game store
 because of the pandemic, struggle to find the selected title and limited stock along with
@@ -71,3 +75,43 @@ informed choices about which games are right for me.
 such that I can check them later.
 22. As a customer, I want to be able to see my Wishlist, such that I could buy the
 games later. 
+
+## Non-Functional Requirements
+23. Every game and user should be stored in the database server
+24. The data between the client and the app server needs to be sent as a JSON
+format.
+25. Create a distributed system
+26. The system must be heterogeneous
+27. The system must contain server to server communication
+28. The system must use at least two different network technologies
+29. The system must include a GUI for each client
+30. The system must have one or more databases
+31. The system must use PayPal billing service 
+
+## Project Future
+Looking at the current finished project, first the Website graphic designed needs a big change because we have put all
+of our effort in to functionality of it and were out of time to make it look pleasant to the eye, after that a few technical features could be improved. One
+of the major ones would be to let a customer purchase a game without registering to
+the system. The second one would be to let a user know if the game is out of stock, for
+the reason that at this time the system only notifies the user that a game is out of stock
+when trying to purchase it. Notifying beforehand would increase efficiency in the user
+experience. In general, if looking at the future of this project, a sale functionality could
+be added for the administrator, meaning that it would be possible to make a game go
+on sale. Along with that, notify the customers who have the game on their Wishlist that
+the game is currently on sale. Furthermore, a feature “Upcoming games” with a
+countdown for each game until they are released and available to buy, would also be
+useful for customers. In the case of scalability, the project is developed with an idea in
+mind to be easily scalable. Database, which is used in the third tier is the only point that
+would need to be upgraded in the system because currently it is hosted with small
+available limits. After that, the system can be scaled to a vast extent. 
+
+## Conclusion
+The system was developed for making buying video games online possible. It
+solves the main problem of current danger of shopping in a physical game store
+because of the pandemic, struggle to find the desired title and limited stock along
+with waiting queues for purchasing a new game. In addition, all the requirements
+were implemented, and all the criteria was met. They were all tested and are
+working. The application has a simple and scalable user interface, 3-tier
+architecture, dependencies injection and MVVM design patterns. It uses REST
+requests and sockets to communicate between tiers and uses technologies like
+.NET, Blazor, C# and Java. 
