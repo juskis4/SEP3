@@ -31,6 +31,7 @@ to log in.
 purchase a game. 
 
 **High Priority**
+
 5. As a customer, I want to be able to browse game, such that I could choose
 which ones to buy.
 6. As a customer, I want to be able to see the games price on the browse page,
@@ -59,6 +60,7 @@ would be secure.
 correct the mistakes.
 
 **Low Priority**
+
 18. As a customer, I want to see newly released games, such that I would be up to
 date with new games.
 19. As a customer, I want to see the IGN rating of games, such that I would have a
