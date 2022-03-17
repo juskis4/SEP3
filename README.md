@@ -29,6 +29,7 @@ error I would have proof of purchase.
 to log in.
 4. As a customer, I want to be able to log in as a user, such that I would be able to
 purchase a game. 
+
 **High Priority**
 5. As a customer, I want to be able to browse game, such that I could choose
 which ones to buy.
@@ -55,7 +56,8 @@ check if it is correct.
 16. As a customer, I want to be able to change my password, such that my account
 would be secure.
 17. As a customer, I want to be able to change my information, such that I could
-correct the mistakes. 
+correct the mistakes.
+
 **Low Priority**
 18. As a customer, I want to see newly released games, such that I would be up to
 date with new games.
